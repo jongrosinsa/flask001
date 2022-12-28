@@ -12,7 +12,7 @@ app = Blueprint('users', __name__, url_prefix='/users')
 
 @app.route('/signup', methods=['GET', 'POST'])
 @already_signin                                                                  #3
-def signup():              ##
+def signup():              #
     form = SignUpForm()
 
     if form.validate_on_submit():
