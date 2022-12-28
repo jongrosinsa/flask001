@@ -12,10 +12,10 @@ app = Blueprint('users', __name__, url_prefix='/users')
 
 @app.route('/signup', methods=['GET', 'POST'])
 @already_signin                                                                  #3
-def signup():
+def signup():             ###123
     form = SignUpForm()
 
-    if form.vaildate_on_submit():
+    if form.validate_on_submit():
         email_user = User.query.filter(User.email == form.email.data).first()
         nickname_user = User.query.filter(User.nickname == form.nickname.data).first()
 
